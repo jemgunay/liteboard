@@ -1,5 +1,5 @@
 # liteboard
-A free course management system developed for courses and schools which do not have access to alternative paid learning tools such as Blackboard or Moodle.
+A free, open-source course management system developed for courses and schools which do not have access to alternative paid learning tools such as Blackboard or Moodle.
 
 Screenshots can be found in '/previews'.
 
