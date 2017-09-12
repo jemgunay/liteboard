@@ -1,0 +1,44 @@
+<div id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+    <!-- navbar brand -->
+    <a class="navmenu-brand" href="{{ @BASE }}/news">
+        <span><img class="school-logo pull-left" alt="Brand" src="{{@BASE}}/ui/img/school-logo.png"></span>
+        <span class="brand-text text-right">{{ @site_name }}</span>
+    </a>
+
+    <!-- navbar options -->
+    <ul class="nav navmenu-nav">
+        <!-- admin -->
+        <check if="{{ @SESSION.user.is_admin }}">
+            <li class="{{ @is_active_nav('Admin') ? 'active' : '' }}"><a href="{{ @BASE }}/admin"><i class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></i>Admin</a></li>
+            <hr class="menu-hr">
+        </check>
+
+        <!-- news & calender-->
+        <li class="{{ @is_active_nav('Alerts & News') ? 'active' : '' }}"><a href="{{ @BASE }}/news"><i class="glyphicon glyphicon glyphicon-bell" aria-hidden="true"></i>Alerts & News</a></li>
+        <li class="{{ @is_active_nav('Year Plan') ? 'active' : '' }}"><a href="{{ @BASE }}/calendar"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>Year Plan</a></li>
+        <hr class="menu-hr">
+
+        <!-- dynamically defined nav options -->
+        <repeat group="{{ @nav_options }}" value="{{ @nav_option }}">
+            <li class="{{ @is_active_nav(@nav_option.name) ? 'active' : '' }}">
+                <a href="{{ @BASE }}/content/{{ @nav_option.folder_id }}"><i class="glyphicon glyphicon-{{ @nav_option.icon }}" aria-hidden="true"></i>{{ @nav_option.name }}</a>
+            </li>
+
+            <check if="{{ @nav_option.is_divider }}">
+                <hr class="menu-hr">
+            </check>
+        </repeat>
+
+        <!-- logout -->
+        <li><a href="{{ @BASE }}/logout"><i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>Log Out</a></li>
+    </ul>
+</div>
+
+<!-- navbar toggle button -->
+<div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>

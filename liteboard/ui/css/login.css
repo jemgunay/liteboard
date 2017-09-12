@@ -1,0 +1,99 @@
+body {
+    background: -webkit-linear-gradient(rgba(48, 177, 255, 0.51), #f2fcfe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(48, 177, 255, 0.51), #f2fcfe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(48, 177, 255, 0.51), #f2fcfe); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(48, 177, 255, 0.51), #f2fcfe); /* Standard syntax */
+}
+
+/* sign in page */
+.card {
+    background-color: #F7F7F7;
+    margin: 0 auto 25px;
+    /*margin-top: 50px;*/
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.card-container.card {
+    max-width: 375px;
+    padding: 40px;
+}
+.card-container.card-error {
+    max-width: 500px;
+    padding: 40px;
+}
+.brand-text-error {
+    line-height: 250%;
+}
+.form-login .btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.form-login .form-control {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+.form-login input,
+.form-login select,
+.form-login button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-login button {
+    margin-bottom: 0px;
+}
+.form-login .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+.form-login .form-control {
+    direction: ltr;
+    height: 36px;
+    font-size: 16px;
+}
+.card .school-logo {
+    margin-bottom: 40px;
+    margin-left: 0px;
+    width: 75px;
+}
+.card .brand-text {
+    font-size: 210%;
+}
+
+#alert-container {
+    max-width: 375px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.alert {
+    margin-bottom: 0px;
+}
+
+/* media queries */
+@media (max-width: 400px) {
+    /* for login form very small screen */
+    .card .brand-text {
+        font-size: 6.7vw;
+    }
+    .card .school-logo {
+        width: 15vw;
+    }
+}

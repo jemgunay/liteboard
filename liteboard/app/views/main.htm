@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- header -->
+    <include href="header.htm" />
+
+    <body>
+        <div class="container-fluid">
+
+            <check if="{{ @use_viewport }}">
+                <true>
+                    <div id="navmenu-canvas">
+                        <!-- nav -->
+                        <include href="nav.htm" />
+
+                        <!-- main content viewport -->
+                        <div class="row">
+
+                            <!-- breadcrumbs -->
+                            <ol class="breadcrumb square-corners">
+                                <repeat group="{{ @breadcrumbs }}" value="{{ @breadcrumb }}" counter="{{ @counter }}">
+                                    <check if="{{ count(@breadcrumbs) == @counter }}">
+                                        <true>
+                                            <li class="active">{{ @breadcrumb.name }}</li>
+                                        </true>
+                                        <false>
+                                            <li><a href="{{ @BASE }}/{{ @breadcrumb.url }}">{{ @breadcrumb.name }}</a></li>
+                                        </false>
+                                    </check>
+                                </repeat>
+                            </ol>
+
+                            <!-- main page content panel -->
+                            <div class="col-xs-12 panel-main">
+                                <div class="panel panel-default square-corners">
+                                    <div class="panel-body">
+
+                                        <!-- current page -->
+                                        <include href="{{ @view }}" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </true>
+
+                <false>
+                    <include href="{{ @view }}" />
+                </false>
+            </check>
+
+        </div>
+
+        <!-- footer -->
+        <include href="footer.htm" />
+    </body>
+</html>

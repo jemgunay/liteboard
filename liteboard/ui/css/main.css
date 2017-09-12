@@ -1,0 +1,242 @@
+/* body */
+html, body {
+    height: 100%;
+}
+.container-fluid {
+    height: 100%;
+}
+
+/* typefaces */
+h1, h2, h3, h4, h5, h6, p, th {
+    font-family: 'Oxygen', sans-serif;
+    color: #555;
+}
+h2 {
+    padding: 10px 0 12px 0;
+}
+h4 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    line-height: 140%;
+}
+h5 {
+    font-size: 125%;
+    line-height: 140%;
+}
+
+p {
+    font-size: 110%;
+    line-height: 140%;
+    word-wrap: break-word;
+}
+a {
+    color: #23527c;
+}
+a:hover {
+    color: #337ab7;
+    text-decoration: none;
+}
+.brand-text {
+    font-family: 'Sofia', cursive;
+    line-height: 130%;
+    font-size: 110%;
+    color: #337ab7;
+}
+.nav .glyphicon {
+    margin-right: 8px;
+}
+.news-post-title .glyphicon-link {
+    margin-right: 3px;
+}
+
+/* generic */
+.square-corners {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.panel-main {
+    padding: 0px 8px;
+    height: 100%;
+}
+.panel-body {
+    padding: 0px;
+    height: 100%;
+}
+.modal-body {
+    padding-bottom: 0px;
+}
+.btn-admin p {
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+.btn-primary {
+    background-color: #036EB6;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #035a9f;
+}
+
+
+/* alerts & news */
+#alerts-container, #news-container {
+    padding: 0 25px 30px 25px;
+    height: 100%;
+}
+#news-container hr:not(.invisible) {
+    margin: 12px 0px;
+}
+#news-container p b {
+    margin-right: 3px;
+}
+.label {
+    padding: .3em .6em .4em
+}
+.scrollable-table {
+    overflow: auto;
+}
+.colour-select {
+    color: #FFF;
+}
+
+
+/* calendar */
+#calendar {
+    margin-bottom: 50px;
+}
+.fc-center h2 {
+    padding: 0px;
+}
+
+
+/* content */
+.glyphicon-media.glyphicon-file {
+    font-size: 36px;
+}
+.glyphicon-media.glyphicon-folder-open {
+    font-size: 32px;
+    margin-right: 4px;
+}
+.media {
+    margin-top: 30px;
+}
+.media-heading {
+    font-size: 19px;
+    display: inline-block
+}
+.media-left {
+    width: 200px;
+    padding-left: 12px;
+}
+.content-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.media-editor {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.media-admin {
+    width: 82px;
+}
+.content-arrow-btn {
+    margin-left: 5px;
+}
+.media-editor .form-inline {
+    margin-top: 5px;
+    display: none;
+}
+.folder-empty-msg {
+    color: #b3b3b3;
+    margin: 100px 0;
+}
+a h4 {  color: #23527c;  }
+a h4:hover {  color: #337ab7;  }
+.media-admin button {
+    width: 32px;
+    height: 32px;
+}
+.download-count {
+    display: inline;
+    margin-left: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+
+/********************************* media queries **************************************/
+@media (max-width: 480px) {
+    /* calendar */
+    .fc-center h2 {
+        padding-top: 8px;
+    }
+    .fc-toolbar.fc-header-toolbar {
+        margin-bottom: 8px;
+    }
+}
+@media (min-width: 768px) {
+    /* vertical rule */
+    .vertical-rule-l:before,
+    .vertical-rule-l:after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: -1px;
+        width: 2px;
+        height: 50%;
+    }
+    .vertical-rule-l:before {
+        top: 0;
+        background: linear-gradient(to top, rgba(0,0,0,.1) 0%, transparent 105%);
+    }
+    .vertical-rule-l:after {
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, transparent 105%);
+    }
+}
+@media (max-width: 767px) {
+    /* adjust padding when alerts & news are stacked */
+    #alerts-container {
+        padding-bottom: 0px;
+    }
+    #news-title {
+        padding: 5px 0 12px 0;
+    }
+    #alerts-container h4, #news-container h4 {
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+    #categories-btn {
+        margin-top: 15px;
+    }
+}
+@media (min-width: 992px) {
+    .panel-main {
+        padding: 0px 15px;
+    }
+    /* admin */
+    #form-change-pass input, #form-change-pass select {
+        max-width: 400px;
+    }
+}
+@media (max-width: 991px) {
+    #alerts-container, #news-container {
+        padding: 10px;
+    }
+    .btn-alerts-container {
+        white-space: nowrap;
+        overflow-y: visible;
+    }
+}
+@media (max-width: 1416px) {
+    /* edit & delete buttons */
+    .btn-admin-sm {
+        padding: 0px;
+    }
+    .btn-admin-sm .glyphicon {
+        padding: 2px 4.6px;
+    }
+    td {
+        font-size: 80%;
+    }
+}

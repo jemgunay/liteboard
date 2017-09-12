@@ -1,0 +1,32 @@
+<!-- scripts -->
+<!-- jquery -->
+<script src="{{@BASE}}/ui/js/lib/jquery-3.2.1.min.js" type="text/javascript"></script>
+<!-- bootstrap -->
+<script src="{{@BASE}}/ui/js/lib/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{@BASE}}/ui/js/lib/jasny-bootstrap.min.js" type="text/javascript"></script>
+<!--<script src="{{@BASE}}/ui/js/lib/bootstrap-iconpicker.min.js" type="text/javascript"></script>-->
+<script src="{{@BASE}}/ui/js/lib/bootstrap-colorpicker.min.js" type="text/javascript"></script>
+<!-- calendar -->
+<script src="{{@BASE}}/ui/js/lib/moment.min.js" type="text/javascript"></script>
+<script src="{{@BASE}}/ui/js/lib/fullcalendar.min.js" type="text/javascript"></script>
+<!-- custom -->
+<script src="{{@BASE}}/ui/js/main.js" type="text/javascript"></script>
+
+<check if="{{ @view == 'user/login.htm'}}">
+    <script src="{{@BASE}}/ui/js/login.js" type="text/javascript"></script>
+</check>
+<check if="{{ @SESSION.user.is_admin }}">
+    <check if="{{ @view == 'user/admin.htm'}}">
+        <script src="{{@BASE}}/ui/js/admin-manager.js" type="text/javascript"></script>
+    </check>
+    <check if="{{ @view == 'news/display.htm'}}">
+        <script src="{{@BASE}}/ui/js/admin-alert.js" type="text/javascript"></script>
+    </check>
+    <check if="{{ @view == 'calendar/display.htm'}}">
+        <script src="{{@BASE}}/ui/js/admin-calendar.js" type="text/javascript"></script>
+    </check>
+    <check if="{{ @view == 'content/display.htm'}}">
+        <script src="{{@BASE}}/ui/js/lib/quill.js" type="text/javascript"></script>
+        <script src="{{@BASE}}/ui/js/admin-content.js" type="text/javascript"></script>
+    </check>
+</check>

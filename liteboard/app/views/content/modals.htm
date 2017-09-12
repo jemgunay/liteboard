@@ -1,0 +1,101 @@
+<!-- template modal -->
+<div class="modal fade" id="template-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- modal header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="template-modal-title">Modal Title</h4>
+            </div>
+
+            <div class="modal-body">
+                <!-- file -->
+                <div id="modal-file" class="modal-form">
+                    <form class="form-horizontal" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <!-- file upload input -->
+                            <label for="file-upload" class="col-sm-2 control-label">File</label>
+                            <div class="col-sm-10">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <span class="btn btn-default btn-file">
+                                        <span>Choose file</span>
+                                        <input id="file-upload" name="file-upload" type="file">
+                                    </span>
+                                    <span class="fileinput-filename"></span>
+                                    <span class="fileinput-new">No file chosen</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- description input -->
+                        <div class="form-group">
+                            <label for="description-input" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="description-input" name="description"></textarea>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- folder -->
+                <div id="modal-folder" class="modal-form">
+                    <p>A folder description is optional.</p>
+
+                    <!-- form -->
+                    <form class="form-horizontal">
+                        <!-- description input -->
+                        <div class="form-group">
+                            <label for="name-input" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input class="form-control" id="name-input" name="name">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" id="btn-folder-date">
+                                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Set as date
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- description input -->
+                        <div class="form-group">
+                            <label for="folder-description-input" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="folder-description-input" name="description"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="error-container"></div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="template-submit" type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- delete modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-capitalize" id="delete-modal-label">Modal Title</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <div class="error-container"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="delete-submit">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

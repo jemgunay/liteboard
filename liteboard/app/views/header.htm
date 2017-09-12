@@ -1,0 +1,33 @@
+<head>
+    <base href="{{ @BASE.'/'.@UI }}" />
+    <title>{{ @site_name }}</title>
+    <meta name="author" content="Jem Gunay">
+    <meta name="description" content="{{ @site_desc }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap -->
+    <link href="{{@BASE}}/ui/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{@BASE}}/ui/css/lib/jasny-bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="{{@BASE}}/ui/css/lib/bootstrap-iconpicker.min.css" rel="stylesheet">-->
+    <link href="{{@BASE}}/ui/css/lib/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css">
+    <!-- full calendar -->
+    <link href="{{@BASE}}/ui/css/lib/fullcalendar.min.css" rel="stylesheet" type="text/css">
+
+    <check if="{{ @SESSION.user.is_admin }}">
+        <!-- quill -->
+        <link href="{{@BASE}}/ui/css/lib/quill.snow.css" rel="stylesheet" type="text/css">
+    </check>
+    <!-- custom -->
+    <link href="{{@BASE}}/ui/css/main.css" rel="stylesheet" type="text/css">
+    <link href="{{@BASE}}/ui/css/nav.css" rel="stylesheet" type="text/css">
+    <check if="{{ @view == 'user/login.htm' || @view == 'error.htm' }}">
+        <link href="{{@BASE}}/ui/css/login.css" rel="stylesheet" type="text/css">
+    </check>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sofia|Oxygen" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{@BASE}}/ui/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{@BASE}}/ui/img/favicon.ico" type="image/x-icon">
+
+    <!-- liteboard: Developed by Jem Gunay (jemgunay.co.uk) -->
+</head>

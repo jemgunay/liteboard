@@ -1,0 +1,95 @@
+<!-- main folder & content browsing -->
+<div class="col-sm-12">
+    <h2 class="text-center">Admin</h2>
+    <h4 class="text-center">Control panel for general site management.</h4>
+
+    <!-- options -->
+    <div class="page-header">
+        <h3>Manage Passwords</h3>
+    </div>
+
+    <!-- change password form -->
+    <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
+        <!-- error container -->
+        <div id="error-container-pass"></div>
+    </div>
+
+    <form class="form-horizontal" id="form-change-password">
+        <div class="form-group">
+            <label for="account-input" class="col-sm-4 control-label">Account</label>
+            <div class="col-sm-5">
+                <select class="form-control" id="account-input" name="account">
+                    <repeat group="{{ @accounts }}" value="{{ @account }}">
+                        <option value="{{ @account.account_id }}">{{ @account.name }}</option>
+                    </repeat>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="old-pass-input" class="col-sm-4 control-label">Current Password</label>
+            <div class="col-sm-5">
+                <input class="form-control" id="old-pass-input" type="password" name="old_password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="new-pass-input" class="col-sm-4 control-label">New Password</label>
+            <div class="col-sm-5">
+                <input class="form-control" id="new-pass-input" type="password" name="new_password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-5">
+                <button type="button" id="btn-change-pass" class="btn btn-primary square-corners">
+                    <i class="glyphicon glyphicon-ok" aria-hidden="true"></i>&nbsp; Submit New Password
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- account login stats -->
+    <div class="page-header">
+        <h3>Log In Counter</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8">
+            <table class="table table-hover text-center">
+                <thead>
+                <tr>
+                    <th class="text-center">Account</th>
+                    <th class="text-center">Number of Log Ins</th>
+                    <th class="text-center">Last Counter Reset Date</th>
+                    <th class="text-center">Reset Counter</th>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @accounts }}" value="{{ @account }}">
+                    <tr>
+                        <td>{{ @account.name }}</td>
+                        <td>{{ @account.login_count }}</td>
+                        <td>{{ @space_to_newline(@account.count_reset_date) }}</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" type="button" href="{{ @BASE }}/admin/reset_counter/{{ @account.account_id }}">Reset</a>
+                        </td>
+                    </tr>
+                </repeat>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br><br>
+    <!-- edit menu settings -->
+    <div class="hidden">
+        <div class="page-header">
+            <h3>Edit Menu</h3>
+        </div>
+        <p>TODO</p>
+
+        <br><br><br><br>
+
+    </div>
+
+</div>

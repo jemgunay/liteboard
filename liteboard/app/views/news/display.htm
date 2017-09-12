@@ -1,0 +1,137 @@
+<check if="{{ @SESSION.user.is_admin }}">
+    <include href="news/modals.htm" />
+</check>
+
+<!-- alerts section -->
+<div class="col-sm-6 col-xs-12" id="alerts-container">
+    <h2 class="text-center">Alerts</h2>
+    <h4 class="text-center">Reminders and useful notes.</h4>
+
+    <check if="{{ @SESSION.user.is_admin }}">
+        <!-- alerts modal -->
+        <div class="well well-sm text-center">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#alerts-modal" data-action="create">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create Alert
+            </button>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#categories-modal" data-action="edit">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage Categories
+            </button>
+        </div>
+    </check>
+
+    <check if="{{ count(@alerts) == 0 }}">
+        <!-- check if any alerts have been created -->
+        <true>
+            <h3 class="text-center folder-empty-msg">Sorry, no alerts have been created!</h3>
+        </true>
+        <false>
+            <!-- alerts table -->
+            <div class="scrollable-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-2">Date Created</th>
+
+                            <check if="{{ @SESSION.user.is_admin }}">
+                                <true><th class="col-xs-6">Description</th></true>
+                                <false><th class="col-xs-9">Description</th></false>
+                            </check>
+
+                            <th class="col-xs-1 text-center">Category</th>
+
+                            <check if="{{ @SESSION.user.is_admin }}">
+                                <th class="col-xs-3 text-center">Admin</th>
+                            </check>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <repeat group="{{ @alerts }}" value="{{ @alert }}">
+                            <tr>
+                                <td>{{ @split_datetime(@alert.date_created)[0] }}</td>
+                                <td>{{ @alert.description }}</td>
+                                <td class="text-center"><span class="label" style="background-color: {{ @alert.colour }}">{{ @alert.name }}</span></td>
+
+                                <!-- admin controls -->
+                                <check if="{{ @SESSION.user.is_admin }}">
+                                    <td class="text-center btn-alerts-container">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-warning btn-sm btn-admin-sm" data-toggle="modal" data-target="#alerts-modal" data-action="edit" data-fields='["{{@alert.alert_id}}", "{{@alert.description}}", "{{@alert.category_id}}"]'>
+                                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm btn-admin-sm" data-toggle="modal" data-target="#delete-modal" data-action="alert" data-target-id="{{@alert.alert_id}}">
+                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </check>
+                            </tr>
+                        </repeat>
+                    </tbody>
+                </table>
+            </div>
+
+        </false>
+    </check>
+
+</div>
+
+<!-- news section -->
+<div class="col-sm-6 col-xs-12 vertical-rule-l" id="news-container">
+    <hr class="visible-xs-block">
+    <h2 class="text-center" id="news-title">News</h2>
+    <h4 class="text-center">Relevant news and publications for further reading.</h4>
+
+    <check if="{{ @SESSION.user.is_admin }}">
+        <!-- news modal -->
+        <div class="btn-admin well well-sm text-center">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#news-modal" data-action="create">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create News Post
+            </button>
+        </div>
+    </check>
+
+    <check if="{{ count(@news_posts) == 0 }}">
+        <!-- check if any alerts have been created -->
+        <true>
+            <h3 class="text-center folder-empty-msg">Sorry, no news posts have been created!</h3>
+        </true>
+        <false>
+            <!-- news links -->
+            <repeat group="{{ @news_posts }}" value="{{ @news_post }}" counter="{{ @counter }}">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h5 class="news-post-title">
+
+                            <!-- admin controls -->
+                            <check if="{{ @SESSION.user.is_admin }}">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-warning btn-sm btn-admin-sm" data-toggle="modal" data-target="#news-modal" data-action="edit" data-fields='["{{@news_post.news_id}}", "{{@news_post.title}}", "{{@news_post.description}}", "{{@news_post.URL}}"]'>
+                                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm btn-admin-sm" data-toggle="modal" data-target="#delete-modal" data-action="news" data-target-id="{{@news_post.news_id}}">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </check>
+
+                            <!-- news post content -->
+                            <span class="glyphicon glyphicon glyphicon-link" aria-hidden="true"></span>
+                            <a href="{{ @news_post.URL }}" target="_blank">
+                                <u><b>{{ @news_post.title }}</b></u>
+                            </a>
+                        </h5>
+                        <p><b>[{{ @split_datetime(@news_post.date_created)[0] }}]</b> {{ @news_post.description }}</p>
+
+                    </div>
+                </div>
+                <!-- hr after every news post except for last post -->
+                <check if="{{ count(@news_posts) != @counter }}">
+                    <hr>
+                </check>
+            </repeat>
+
+        </false>
+    </check>
+
+</div>

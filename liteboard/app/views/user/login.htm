@@ -1,0 +1,27 @@
+<!-- error alerts -->
+<div id="alert-container"></div>
+
+<div class="card card-container">
+    <!-- logo -->
+    <div class="row">
+        <div class="col-md-12">
+            <span><img class="school-logo pull-left" alt="Brand" src="{{@BASE}}/ui/img/school-logo.png"></span>
+            <span class="brand-text text-right">{{ @site_name }}</span>
+        </div>
+    </div>
+
+    <!-- login form -->
+    <form class="form-login">
+        <select class="form-control square-corners" name="account">
+            <repeat group="{{ @accounts }}" value="{{ @account }}">
+                <option>{{ @account.name }}</option>
+            </repeat>
+        </select>
+        <input id="login-password" class="form-control square-corners" name="password" type="password" placeholder="Password" autofocus>
+        <input type="hidden" name="login">
+
+        <button id="btn-login" type="button" class="btn btn-primary square-corners">
+            <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp; Log In
+        </button>
+    </form>
+</div>

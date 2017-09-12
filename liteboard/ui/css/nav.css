@@ -1,0 +1,72 @@
+/* side menu */
+.navmenu {
+    padding-top: 42px;
+    width: 240px;
+}
+/* top bar behind burger icon (invisible) */
+.navbar {
+    display: block;
+    text-align: center;
+    background: none;
+    border-color: transparent;
+    pointer-events: none;
+}
+/* side menu brand */
+.navbar-brand {
+    display: inline-block;
+    float: none;
+}
+/* side menu burger icon */
+.navbar-toggle {
+    position: absolute;
+    float: left;
+    margin-left: 8px;
+    background: #f8f8f8;
+    pointer-events: auto;
+}
+
+/* icon & logo */
+.icon-bar {
+    margin: 2px 0;
+}
+.school-logo {
+    margin-right: 15px;
+    margin-left: 4px;
+    width: 50px;
+}
+
+/* breadcrumbs */
+.breadcrumb {
+    margin: 8px 8px 8px 60px;
+    padding: 9px 15px;
+}
+
+/* menu hr */
+.menu-hr {
+    margin: 0px;
+    border-top-width: 2px;
+}
+
+
+/******************************** media queries ************************************/
+@media (min-width: 1px) {
+    .navbar-toggle {
+        display: block !important;
+    }
+}
+
+@media (min-width: 992px) {
+    #navmenu-canvas {
+        padding: 0 0 0 240px;
+    }
+    .navmenu {
+        padding-top: 0;
+    }
+    .navbar {
+        display: none !important; /* IE8 fix */
+    }
+    .breadcrumb {
+        margin: 15px;
+        padding: 8px 15px;
+    }
+}

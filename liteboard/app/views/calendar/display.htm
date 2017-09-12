@@ -1,0 +1,29 @@
+<check if="{{ @SESSION.user.is_admin }}">
+    <include href="calendar/modals.htm" />
+</check>
+
+<!-- calendar section -->
+<div class="col-xs-12" id="calendar-container">
+    <h2 class="text-center">Year Plan</h2>
+    <h4 class="text-center">Deadlines and events.</h4>
+
+    <!-- admin controls -->
+    <check if="{{ @SESSION.user.is_admin }}">
+        <!-- news modal -->
+        <div class="btn-admin well well-sm text-center">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#calendar-modal" data-action="create">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create Calendar Event
+            </button>
+            <p class="text-center">Click an event to edit or delete it.</p>
+        </div>
+    </check>
+
+    <hr>
+
+    <!-- calendar -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="calendar"></div>
+        </div>
+    </div>
+</div>
