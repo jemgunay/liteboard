@@ -12,12 +12,14 @@ Screenshots can be found in '/previews'.
 * Slick and responsive user interface design - information is displayed cleanly on mobile (see preview images)
 
 <br>
+
 ## Requirements
 * Web server
 * MySQL server & phpMyAdmin
 > All of the above are provided by most cheap web hosting services - often including a free domain name!
 
 <br>
+
 ## Usage
 1. Extract the '/liteboard/' directory into a web server directory.
 1. Create a MySQL database named 'liteboard' and import the '/db/liteboard_default.sql' file using phpMyAdmin to populate the database with required tables and default entries.
