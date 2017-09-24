@@ -54,12 +54,14 @@ $f3->route(
 );
 
 // error page
-$f3->set('ONERROR', function($f3) {
-    $f3->set('use_viewport', false);
-    $f3->set('view', 'error.htm');
-    $f3->set('render_target', 'main.htm');
-    echo Template::instance()->render($f3->render_target, 'text/html');
-});
+if ($f3->get('error_page_enabled')) {
+    $f3->set('ONERROR', function($f3) {
+        $f3->set('use_viewport', false);
+        $f3->set('view', 'error.htm');
+        $f3->set('render_target', 'main.htm');
+        echo Template::instance()->render($f3->render_target, 'text/html');
+    });
+}
 
 // extend session to prevent user-agent change 403 error
 new Session(function(Session $session, $id) {

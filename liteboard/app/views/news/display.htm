@@ -56,7 +56,7 @@
                                 <check if="{{ @SESSION.user.is_admin }}">
                                     <td class="text-center btn-alerts-container">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-warning btn-sm btn-admin-sm" data-toggle="modal" data-target="#alerts-modal" data-action="edit" data-fields='["{{@alert.alert_id}}", "{{@alert.description}}", "{{@alert.category_id}}"]'>
+                                            <button type="button" class="btn btn-warning btn-sm btn-admin-sm" data-toggle="modal" data-target="#alerts-modal" data-action="edit" data-fields='["{{@alert.alert_id}}", "{{ @encode(@alert.description) }}", "{{@alert.category_id}}"]'>
                                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm btn-admin-sm" data-toggle="modal" data-target="#delete-modal" data-action="alert" data-target-id="{{@alert.alert_id}}">
@@ -106,7 +106,7 @@
                             <!-- admin controls -->
                             <check if="{{ @SESSION.user.is_admin }}">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-warning btn-sm btn-admin-sm" data-toggle="modal" data-target="#news-modal" data-action="edit" data-fields='["{{@news_post.news_id}}", "{{@news_post.title}}", "{{@news_post.description}}", "{{@news_post.URL}}"]'>
+                                    <button type="button" class="btn btn-warning btn-sm btn-admin-sm" data-toggle="modal" data-target="#news-modal" data-action="edit" data-fields='["{{@news_post.news_id}}", "{{ @encode(@news_post.title) }}", "{{ @encode(@news_post.description) }}", "{{ @encode(@news_post.URL)}}"]'>
                                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     </button>
                                     <button type="button" class="btn btn-danger btn-sm btn-admin-sm" data-toggle="modal" data-target="#delete-modal" data-action="news" data-target-id="{{@news_post.news_id}}">

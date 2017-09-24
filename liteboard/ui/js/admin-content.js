@@ -3,6 +3,8 @@ $(document).ready(function() {
 
     // arrangement changing arrows
     $('.btn-arrange:not(:disabled)').click(function() {
+        if (!checkButtonReady($(this))) return;
+
         var data = { 'content_id': $(this).attr('data-content-id') };
         data['direction'] = $(this).attr('data-direction');
         perform_ajax('content/' + parent_folder + '/rearrange', data);
@@ -10,6 +12,8 @@ $(document).ready(function() {
 
     // quill create
     $('#btn-create-description').click(function() {
+        if (!checkButtonReady($(this))) return;
+
         var data = { 'target_type': 'editor' };
         perform_ajax('content/' + parent_folder + '/create', data);
     });
@@ -47,6 +51,8 @@ $(document).ready(function() {
 
         // submit
         $(this).closest('.media').find('#btn-quill-save').click(function() {
+            if (!checkButtonReady($(this))) return;
+
             var data = { 'target_id': target_id };
             data['target_type'] = 'editor';
             data['text'] = quill.root.innerHTML;
@@ -116,6 +122,8 @@ $(document).ready(function() {
         // submit
         $('#template-submit').unbind();
         $('#template-submit').click(function(){
+            if (!checkButtonReady($(this))) return;
+
             var data = {};
 
             if (type == 'file') {
@@ -163,6 +171,8 @@ $(document).ready(function() {
         // delete btn submit
         $("#delete-submit").unbind();
         $("#delete-submit").click(function() {
+            if (!checkButtonReady($(this))) return;
+
             perform_ajax('content/' + parent_folder + '/delete', data);
         });
     });

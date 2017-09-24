@@ -39,6 +39,8 @@ $(document).ready(function() {
         // submit changes
         $('#calendar-submit').unbind();
         $('#calendar-submit').click(function(e) {
+            if (!checkButtonReady($(this))) return;
+
             var data = {};
             if (target == "edit") {
                 data['event_id'] = calEvent.id;
@@ -75,6 +77,8 @@ $(document).ready(function() {
 
         $("#delete-submit").unbind();
         $("#delete-submit").click(function() {
+            if (!checkButtonReady($(this))) return;
+
             perform_ajax("calendar/delete", data);
         });
     });

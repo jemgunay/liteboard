@@ -47,7 +47,7 @@
                             <div class="media-admin pull-left">
 
                                 <div class="btn-group-vertical">
-                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#template-modal" data-target-id="{{@item.folder_id}}" data-action="edit" data-type="folder" data-fields='["{{@item.name}}", "{{@item.description}}"]'>
+                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#template-modal" data-target-id="{{@item.folder_id}}" data-action="edit" data-type="folder" data-fields='["{{ @encode(@item.name) }} ", "{{ @encode(@item.description) }}"]'>
                                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     </button>
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal" data-action="folder" data-content-id="{{@item.content_id}}">
@@ -147,7 +147,7 @@
                             <div class="media-admin pull-left">
 
                                 <div class="btn-group-vertical">
-                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#template-modal" data-target-id="{{@item.file_id}}" data-action="edit" data-type="file" data-fields='["{{@item.name}}", "{{@item.description}}"]'>
+                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#template-modal" data-target-id="{{@item.file_id}}" data-action="edit" data-type="file" data-fields='["{{ @encode(@item.name) }}", "{{ @encode(@item.description) }}"]'>
                                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     </button>
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-modal" data-action="file" data-content-id="{{@item.content_id}}">

@@ -12,6 +12,7 @@ class Misc {
         self::$f3->set('split_datetime', [$this, 'split_datetime']);
         self::$f3->set('is_active_nav', [$this, 'is_active_nav']);
         self::$f3->set('space_to_newline', [$this, 'space_to_newline']);
+        self::$f3->set('encode', [$this, 'encode']);
     }
 
     // adds trailing 0s to currency (i.e. 1.5 -> 1.50)
@@ -68,6 +69,11 @@ class Misc {
     // convert space to new line
     static function space_to_newline($str) {
         return str_replace(" ","<br>", $str);
+    }
+
+    // encode quotes
+    static function encode($str) {
+        return htmlspecialchars($str, ENT_QUOTES);
     }
 
     // var_dump debug

@@ -26,6 +26,8 @@ $(document).ready(function() {
         // create or edit alert request on form submit
         $("#alert-submit").unbind();
         $("#alert-submit").click(function(e) {
+            if (!checkButtonReady($(this))) return;
+
             perform_ajax("alert/" + target, $('#form-alert').serialize());
         });
 
@@ -53,6 +55,8 @@ $(document).ready(function() {
     // submit changes
     $('#categories-submit').unbind();
     $('#categories-submit').click(function(e) {
+        if (!checkButtonReady($(this))) return;
+
         var success = true;
 
         $('.existing-label').each(function(i) {
@@ -72,6 +76,8 @@ $(document).ready(function() {
     });
 
     $('#category-create-btn').click(function(e) {
+        if (!checkButtonReady($(this))) return;
+
         var data = {};
         data['name'] = $('#new-label .label-text-input').val();
         data['colour'] = $('#new-label .colorpicker-component').colorpicker('getValue');
@@ -106,6 +112,8 @@ $(document).ready(function() {
         // create or edit news post request on form submit
         $("#news-submit").unbind();
         $("#news-submit").click(function(e) {
+            if (!checkButtonReady($(this))) return;
+
             perform_ajax("news/" + target, $('#form-news').serialize());
         });
 
@@ -123,6 +131,8 @@ $(document).ready(function() {
 
         $("#delete-submit").unbind();
         $("#delete-submit").click(function() {
+            if (!checkButtonReady($(this))) return;
+
             perform_ajax(action + "/delete", data);
         });
     });
