@@ -29,3 +29,7 @@ Screenshots can be found in '/previews'.
 	* Edit the 'site_name' in '/liteboard/config/config.ini' - this is displayed on the login page, browser tab title and side navigation menu.
 	* Edit the 'site_desc' in '/liteboard/config/config.ini' - this is displayed in search engine results if indexed.
 	* Replace the '/liteboard/ui/img' files with images which represent the brand of your course or school.
+<br>
+
+## Development
+The project was developed in PHP with the Fat-Free Framework (F3) for the back end. HTML, CSS (with Bootstrap) and Javascript/jQuery were used for the front end.
