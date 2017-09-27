@@ -32,4 +32,4 @@ Screenshots can be found in '/previews'.
 <br>
 
 ## Development
-The project was developed in PHP with the Fat-Free Framework (F3) for the back end. HTML, CSS (with Bootstrap) and Javascript/jQuery were used for the front end.
+The project was developed in PHP with the [Fat-Free Framework (F3)](https://fatfreeframework.com) for the back end. HTML, CSS (with Bootstrap) and Javascript/jQuery were used for the front end.
