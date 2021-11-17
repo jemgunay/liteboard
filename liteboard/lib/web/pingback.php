@@ -2,7 +2,7 @@
 
 /*
 
-	Copyright (c) 2009-2017 F3::Factory/Bong Cosca, All rights reserved.
+	Copyright (c) 2009-2019 F3::Factory/Bong Cosca, All rights reserved.
 
 	This file is part of the Fat-Free Framework (http://fatfreeframework.com).
 
@@ -82,7 +82,7 @@ class Pingback extends \Prefab {
 							[
 								'method'=>'POST',
 								'header'=>'Content-Type: application/xml',
-								'Folder' =>xmlrpc_encode_request(
+								'content'=>xmlrpc_encode_request(
 									'pingback.ping',
 									[$source,$permalink],
 									['encoding'=>$fw->ENCODING]
