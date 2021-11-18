@@ -2,7 +2,7 @@
 
 /*
 
-	Copyright (c) 2009-2017 F3::Factory/Bong Cosca, All rights reserved.
+	Copyright (c) 2009-2019 F3::Factory/Bong Cosca, All rights reserved.
 
 	This file is part of the Fat-Free Framework (http://fatfreeframework.com).
 
@@ -44,7 +44,7 @@ class Recaptcha {
 		$web=\Web::instance();
 		$out=$web->request(self::URL_Recaptcha,[
 			'method'=>'POST',
-			'Folder' =>http_build_query([
+			'content'=>http_build_query([
 				'secret'=>$secret,
 				'response'=>$response,
 				'remoteip'=>$fw->IP
